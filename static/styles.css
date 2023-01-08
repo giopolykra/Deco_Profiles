@@ -1,0 +1,78 @@
+/* Size for brand */
+nav .navbar-brand
+{
+    font-size: xx-large;
+}
+
+/* Colors for brand */
+nav .navbar-brand .blue
+{
+    color: #537fbe;
+}
+nav .navbar-brand .red
+{
+    color: #ea433b;
+}
+nav .navbar-brand .yellow
+{
+    color: #f5b82e;
+}
+nav .navbar-brand .green
+{
+    color: #2e944b;
+}
+* {
+    box-sizing: border-box;
+  }
+
+  .row {
+    margin-left:-5px;
+    margin-right:-5px;
+  }
+
+  .column {
+    float: left;
+    width: 50%;
+    padding: 8px;
+  }
+
+  /* Clearfix (clear floats) */
+  .row::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+
+  table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+    border: 1px solid #ddd;
+  }
+
+  th, td {
+    text-align: left;
+    padding: 16px;
+  }
+
+  tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  .styled-table {
+    border-collapse: collapse;
+    margin: 16px 0;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    min-width: 200px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  }
+  .styled-table thead tr {
+    background-color: #009879;
+    color: #ffffff;
+    text-align: center;
+  }
+  .styled-table th,
+  .styled-table td {
+      padding: 8px 8px;
+      word-wrap: break-word;
+    }
