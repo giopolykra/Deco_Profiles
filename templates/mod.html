@@ -1,0 +1,123 @@
+{% extends "layout.html" %}
+{% block title %}
+    MOD
+{% endblock %}
+
+{% block main %}
+    <head>
+        <h1>Calculate Maximum Operating Depth</h1>
+        <p>
+            This form calculates <a href="https://en.wikipedia.org/wiki/Maximum_operating_depth">
+            the maximum operating depth</a> for a <a href="https://gue.com/blog/standard-gases-the-advantages-of-having-everyone-singing-the-same-song/#:~:text=GUE%20standard%20gases%20are%20designed,decompression%2C%20using%20standard%20deco%20mixes.">standard breathing gas</a>
+            in the Metric units system
+        </p>
+    </head>
+    <body>
+    <div class="row">
+        <div class="column">
+            <h3>Custom Mix</h3>
+            <table class="t1">
+                <tr>
+                    <td>Oxygen (%)</td>
+                    <td><input type="number" min=10 max=100 class="input" value="21"  id="o2_pct"/></td>
+                </tr>
+
+                <tr>
+                <td>ppO2 (bar/ATA)</td>
+                <td><input type="number" min=1.0 max=2.0 step=0.1 class="input" value="1.4" id="ppo2"/></td>
+                </tr>
+                <tr>
+
+                <tr>
+                <td> MOD result is </td>
+                <td>
+                    <span id="result"></span>
+                </td>
+                </tr>
+
+            </table>
+        </div>
+        <div class="column">
+          <h3>Standard Gases</h3>
+          <table class="t1">
+            <tr>
+            <td>Standard gas:</td>
+            <td>
+                <select id ="gasmix" name="ddl" class="ddl" onkeyup="calc_stand_gas()" >
+                    <option value=''> </option>
+                    <option value='32/0'> 32/0 (O2/He)</option>
+                    <option value='21/35'>21/35 (O2/He)</option>
+                    <option value='18/45'>18/45 (O2/He)</option>
+                    <option value='15/55'>15/55 (O2/He)</option>
+                    <option value='12/65'>12/65 (O2/He)</option>
+                </select>
+            </td>
+            </tr>
+            <tr>
+            <td>ppO2 (bar/ATA)</td>
+            <td>
+                <span id="ppo2_result"></span>
+            </td>
+            </tr>
+
+
+            <tr>
+            <td> Depth Range [m]</td>
+            <td>
+                <span id="depth_range_result"></span>
+            </td>
+            </tr>
+
+        </table>
+        </div>
+    </div>
+
+    <script>
+        function calc(){
+            var ppo2 = document.getElementById('ppo2').value;
+            var o2 = document.getElementById('o2_pct').value;
+            var mod = 10*(ppo2/(o2/100)-1);
+            console.log(mod);
+            document.getElementById("result").textContent = Math.floor(mod);
+            return;
+        }
+        window.addEventListener('load',calc);
+        document.getElementById("ppo2").addEventListener('change', calc);
+        document.getElementById("o2_pct").addEventListener('change', calc);
+
+        function calc_stand_gas(){
+            var gas_mix = document.getElementById('gasmix').value;
+            if (gas_mix == '32/0'){
+                document.getElementById("ppo2_result").textContent = '0.32-1.28';
+                document.getElementById("depth_range_result").textContent = '0-30';
+                return;
+            }
+            if (gas_mix == '21/35'){
+                document.getElementById("ppo2_result").textContent = '0.84-1.155';
+                document.getElementById("depth_range_result").textContent = '30-45';
+                return;
+            }
+            if (gas_mix == '18/45'){
+                document.getElementById("ppo2_result").textContent = '0.99-1.26';
+                document.getElementById("depth_range_result").textContent = '45-60';
+                return;
+            }
+            if (gas_mix == '15/55'){
+                document.getElementById("ppo2_result").textContent = '1.01-1.275';
+                document.getElementById("depth_range_result").textContent = '60-75';
+                return;
+            }
+            if (gas_mix == '12/65'){
+                document.getElementById("ppo2_result").textContent = '1.02-1.224';
+                document.getElementById("depth_range_result").textContent = '75-92';
+                return;
+            }
+        }
+        window.addEventListener('load',calc);
+        document.getElementById("gasmix").addEventListener('change', calc_stand_gas);
+
+    </script>
+
+
+    </body>
+    {% endblock %}
