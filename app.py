@@ -21,16 +21,16 @@ app.config["SESSION_TYPE"] = "filesystem"
 Session(app)
 
 # Configure CS50 Library to use SQLite database
-db = sqlite3.connect("project.db")
+db = sqlite3.connect("project.db") #SQL("sqlite:///project.db")
 
 @app.route("/")
-@login_required
+# @login_required
 def index():
     # user_id = session["user_id"]
     return render_template("index.html")
 
 @app.route("/mod",methods=["GET"])
-@login_required
+# @login_required
 def mod():
     return render_template("mod.html")
 
@@ -71,7 +71,7 @@ def login():
 
 
 @app.route("/logout")
-@login_required
+# @login_required
 def logout():
     """Log user out"""
 
@@ -113,7 +113,7 @@ def register():
 
 
 @app.route("/change_password", methods=["POST", "GET"])
-@login_required
+# @login_required
 def change_password():
     """Change Password"""
     if request.method == "GET":
