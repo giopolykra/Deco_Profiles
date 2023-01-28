@@ -1,6 +1,9 @@
 # DECO Profiles
 #### Video Demo:  https://www.youtube.com/watch?v=bgoYd58DNDQ
 
+<img src="https://github.com/giopolykra/Deco_Profiles/blob/main/photo.png" width="2500">
+
+
 #### Background
 
 In scubadiving where breathing gasses are used at ambient pressure greater than the surface atmospheric pressure, divers are in need of planning and monitoring their dive profile using algorithms and tables in order to avoid decompression sickness (DCS) which is the result of excess dissolved innert gas in muscle tissues that expands from a solution into bubbles as they ascend can cause.
