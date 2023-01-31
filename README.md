@@ -126,7 +126,7 @@ to the website
 
 # To do: 
 - [ ] Declutter the code. Move functions from index.html
-- [ ] Chage the gas_loading_descend function so that you can have a stop for gas changing at descend
+- [ ] Change the gas_loading_descend function so that you can have a stop for gas changing at descend
 - [ ] Keep the position of certain divs as the window changes width
 - [ ] Implement the option for Gradient factors and M-values
 - [ ] Fix login issues
