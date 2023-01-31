@@ -1,5 +1,7 @@
 # DECO Profiles
-#### Video Demo:  https://www.youtube.com/watch?v=bgoYd58DNDQ
+#### Video Demo:  
+
+https://user-images.githubusercontent.com/14907682/215761565-30ae66e9-b2cb-4e04-94df-2dcf4b0825b2.mp4
 
 <img src="https://github.com/giopolykra/Deco_Profiles/blob/main/photo.png" width="2500">
 
@@ -129,5 +131,6 @@ to the website
 - [ ] Implement the option for Gradient factors and M-values
 - [ ] Fix login issues
 - [ ] Add a line for the cretical no-decompression ceiling in the same plot  
+- [ ] Fix the conservatism for the rule of 3rds and rule of halves
 
 
