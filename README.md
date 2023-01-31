@@ -109,7 +109,6 @@ The function `the_dive(t, fN2, fHe, comp)` is used for the horizontal parts of t
 
 The `gas_loading_ascend()` is similar to `gas_loading_descend()` but the ascen rate it now takes negative values. The output is agin similar.
 
-
 The function `build_profile()` uses the above functions to construct a history of depths, deco stops volume of gas breahed untill the the end of the dive. I first call the `gas_loading_descend()` for the descent untill we reach  the target depth and then the `the_dive(t, fN2, fHe, comp)` for the main part of the dive were here t is equal to the bottom time intup o the user. Later I use a while loop and I alternate between `gas_loading_ascend()` and `the_dive(t, fN2, fHe, comp)`, where t in this case is arbitralily set to be 3 + Depth* Bottom time/(300) in the first deco stop and then increeased by 3 minutes at each succeeding deco stop, untill the end depth is equal to 0.
 Here I have also implemented some gas switching to assist the decompression in the ascenting part of the dive. The user might find that for certain parameters the dive profile does not end back at the surface. The reason is that I need to increase the time duration of the shallow decompression stops as well perform an gas switches already at the descending part of the dive.
 
@@ -122,3 +121,11 @@ The function `total_volume()` helps us compute the total breathing gas used for 
 Following the problem 'finance', I require the user to log in or regirstering in order to access the the website. An apology is rendered if either input is blank or the passwords do not match.
 After logging in I give the user the ability to change the password or log out
 to the website
+
+# To do: 
+- [ ] Declutter the code. Move functions from index.html
+- [ ] Chage the gas_loading_descend function so that you can have a stop for gas changing at descend
+- [ ] Keep the position of certain divs as the window changes width
+- [ ] Implement the option for Gradient factors and M-values
+
+
