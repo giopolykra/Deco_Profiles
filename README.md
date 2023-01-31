@@ -127,5 +127,7 @@ to the website
 - [ ] Chage the gas_loading_descend function so that you can have a stop for gas changing at descend
 - [ ] Keep the position of certain divs as the window changes width
 - [ ] Implement the option for Gradient factors and M-values
+- [ ] Fix login issues
+- [ ] Add a line for the cretical no-decompression ceiling in the same plot  
 
 
